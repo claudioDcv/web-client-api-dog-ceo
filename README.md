@@ -1,68 +1,39 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Cliente para api dog.ceo
 
-## Available Scripts
+## Features
+- permite buscar por multiples razas
+- permite buscar por sub razas
+- concatena los resultados
+- se despliegan en una lista de imagenes
+- es un cliente adaptativo
 
-In the project directory, you can run:
+![example01.png](example01.png)
 
-### `npm start`
+La intencion de este cliente web es permitir buscar y filtrar perros ya sea por su raza y subraza inclusive
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Librerias:
+- React JS
+- Bootstrap 4
+- Reactstrap
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Justificaciones
 
-### `npm test`
+### Bootstrap 4
+Se elige la utilizacion de Bootstrap 4, puesto que:
+- Actualmente es el framework css, mas extendido en el mercado
+- ya va en la version 4 y tiene mucho camino recorrido donde se ha pulido y vuelto mas organizado
+- su grilla de 12 columnas lo hace ideal para sitios de todo tipo
+- en conjunto con librerias como Reactstrap permite codear un codigo con un alto enfoque semantico
+- posee gran cantidad de helpers para realizar tareas repetitivas de manera sencilla
+- tiene una amplia documentacion oficial
+- tiene cdn con lo que de ser necesario se puede externalizar los SCRIPTs y CSSs obteniendo la velocidad de carga gracias al cache del cdn
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### React JS
+Se elige la utilizacion de React, puesto que:
+- el cliente no para consumir la api, no requiere una gran infra a nivel de software para mostrar la informacion, por tanto se eligio una libreria solo para la vista. Con esto dejamos fuera a los framework que nos ofrecen heramientas que para este menester no se requieren
+- La comunidad de react es mas grande y activa, por lo que mantener un software creado con esta libreria, permite en el mediano y largo plazo tener desarrolladores que puedan mantener el programa
+- su curva de aprendizaje es baja, puesto que al ser solo responsable de la vista, la logica recae en JS, de esta manera un desarrollador JS, podria asumir la mantencion y adicion de nuevos features en poco tiempo (1 semana es lo que dicta la experiencia)
+- Esta basado en estandares web
+- La gran comunidad permite tener librerias para casi cualquier funcionalidad
+- Hace uso de la programacion funcional y la promueve, logrando componentes menos complejos
+- tiene cdn con lo que de ser necesario se puede externalizar los SCRIPTs obteniendo la velocidad de carga gracias al cache del cdn
