@@ -1,0 +1,16 @@
+.comp-checkbox {
+    background: #007bff;
+    display: block;
+    margin: 0;
+    padding: 15px;
+    border-top: solid 1px #ffffff33;
+    color: white;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.comp-checkbox:hover {
+    background: #64B5F6;
+}
+
+.comp-checkbox input {}
