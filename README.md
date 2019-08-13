@@ -7,7 +7,7 @@
 - se despliegan en una lista de imagenes
 - es un cliente adaptativo
 
-![example01.png](example01.png)
+![./example01.png](./example01.png)
 
 La intencion de este cliente web es permitir buscar y filtrar perros ya sea por su raza y subraza inclusive
 
