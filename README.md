@@ -7,6 +7,14 @@
 - se despliegan en una lista de imagenes
 - es un cliente adaptativo
 
+# Iniciar programa
+- clonar proyecto: `git clone https://github.com/claudioDcv/web-client-api-dog-ceo.git test_proj`
+- ingresar en directorio `cd test_proj`
+- instalar dependencias `npm install` o `yarn`
+- iniciar proyecto `npm start` o `yarn start`
+- copiar archivo de variables de ambiente de ejemplo `cp .env.example .env`
+- configurar variables de ambiente en `./.env`
+
 ![https://github.com/claudioDcv/web-client-api-dog-ceo/blob/develop/example01.PNG](https://github.com/claudioDcv/web-client-api-dog-ceo/blob/develop/example01.PNG)
 
 La intencion de este cliente web es permitir buscar y filtrar perros ya sea por su raza y subraza inclusive
