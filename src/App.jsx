@@ -11,29 +11,45 @@ function App() {
     const [breedList, setBreedList] = useState([])
     const [imageList, setImageList] = useState([])
     const [selectedBreedList, setSelectedBreedList] = useState([])
+    const [listFilterName, setListFilterName] = useState([])
 
     const updateSelecedBreed = (name) => {
         return (event) => {
-            setImageList([]);
+            
             const c = event.target.checked;
             if (c) {
-                selectedBreedList.push({
-                    name,
-                    value: breedList[name],
-                })
+                selectedBreedList.push(name)
                 setSelectedBreedList(selectedBreedList.map(e => e))
-                selectedBreedList.forEach(e => {
-                    imageService.getByQuery(e.name).then(d => {
-                        setImageList(im => im.concat(d));
-                    })
+                selectedBreedList.forEach(name => {
+                    console.log('search->' + name, listFilterName);
+                    // solo buscar si es que no existe dentro de lo ya buscado
+                    if (listFilterName.every(search => search !== name )) {
+                        
+                        imageService.getByQuery(name).then(d => {
+                            setImageList(im => im.concat(d));
+                            // se agrega a la lista de elementos consumidos
+                            // el elemento recien consultado
+                            // mejora performance del servicio
+                            setListFilterName(e => {
+                                e.push(name)
+                                return e;
+                            })
+                        })
+                    }
                 })
             } else {
-                selectedBreedList.filter(e => e.name !== name).forEach(e => {
-                    imageService.getByQuery(e.name).then(d => {
+                setImageList([])
+                // se elimina de la lista de servicios consumidos
+                // el elemento eliminado
+                // mejora merformance del servicio
+                setListFilterName([])
+                console.log(selectedBreedList)
+                selectedBreedList.filter(inName => inName !== name).forEach(filterName => {
+                    imageService.getByQuery(filterName).then(d => {
                         setImageList(im => im.concat(d));
                     })
                 })
-                setSelectedBreedList(selectedBreedList.filter(e => e.name !== name));
+                setSelectedBreedList(selectedBreedList.filter(inName => inName !== name));
             }
 
         }
@@ -70,7 +86,7 @@ function App() {
             <div>
                 <div><Button color="primary" className="comp-responsive-filter-button" onClick={() => setListClose(!listClose)}>{listClose ? "Filtrar" : "Cerrar"}</Button></div>
                 <div>{selectedBreedList.map((selectBreed, index) => (
-                    <Badge color="info" className="mr-1" key={index}>{selectBreed.name}</Badge>
+                    <Badge color="info" className="mr-1" key={index}>{selectBreed}</Badge>
                 ))}</div>
                 <div className="card-columns">
                     {imageList.map((image, index) => (
