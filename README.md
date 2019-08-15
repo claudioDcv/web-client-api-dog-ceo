@@ -18,12 +18,24 @@
 ![https://github.com/claudioDcv/web-client-api-dog-ceo/blob/develop/example01.PNG](https://github.com/claudioDcv/web-client-api-dog-ceo/blob/develop/example01.PNG)
  
 La intención de este cliente web es permitir buscar y filtrar perros ya sea por su raza y subraza inclusive
+
+> Este proyecto genera llamados a la API de manera inteligeste para hacer mas performante el software
+> de esta manera solo se ejecutan los servicios si no existe un llamado anterior. Esto se logra gracias
+> a un objecto que guarda todos los llamados por key = array, por tanto si una key contiene elementos
+> dentro del arreglo, no se hace nuevamente la solicitud, logrando que cada vez que se selecciona un
+> filtro, este se llame solo y se contatene al listado de imagenes. Si se quita un filtro, se elimina
+> la key por tanto en el siguiente llamado no se utiliza para realizar consultas
  
 ## Librerías:
 - React JS
 - Bootstrap 4
 - Reactstrap
  
+
+## CI
+- Covertura minima 80%
+- Este proyecto esta integrado con Travis
+
 ## Justificaciones
  
 ### Bootstrap 4
